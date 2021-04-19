@@ -1,0 +1,53 @@
+\documentclass[moyen]{classeUPD}
+\usepackage[frenchb]{babel}
+
+%\graphicspath{{/home/guillaume/Logos/},
+%  {/home/guillaume/recherche/figures/animaux/}}
+
+
+%\OnehalfSpacing % Option pour donner l'impression que le document est
+% en double interligne
+\begin{document}
+\frontmatter
+\setboolean{these}{false} % true= these, false=hdr
+% \colorpage % [color] rouge du I de ParIs par defaut
+\background[width=\paperwidth]{font.jpg}
+% exemple d'image de fond en option les options de includegraphics
+\logoUpd{Logo_P7} % le logo de la fac avec le nom du fichier
+% [nb de logos: 1 ou 2]{logo1}{logo2} 
+% ne fonctionne pas si nb=0
+\labo[2]{D\'epartement Sciences Exactes}{Licence MIASHS}
+% meme syntaxe
+\title{Application des fractions continues \`a la construction des gammes musicales} 
+% trois lignes maximum, bug au-dela
+\author{Hengze WANG ; Raphael SCHLACHET}
+\university % P7 par defaut, [une autre fac] en option
+\ufr[UFR de Math\'ematiques] % par defaut : rien
+\ed[L1 MIASHS] % idem ufr
+\defense[10 avril 2019] % par defaut le jour-dit
+\speciality{\'ethologie} % obligatoire pour la these, vide sinon
+\president{C. Haddock} % obligatoire sur la page de titre
+\direct{Tchang}
+\referees{T. Tournesol}{S. Lampion}{Rastapopoulos} 
+% obligatoire sur la page de titre 
+% 2 pour la these, 3 pour l'HDR
+\othermember[4][Examinateurs][Dupont][][Dupond][][M\up{lle}
+Castafiore][Censeur][C. Sponsz]
+% [nombre][role][Nom][role][Nom][role][Nom][role][Nom] : 
+% 4 au maximum, tous optionnels
+
+\makecover % pour la couverture suit la charte graphique de P7
+%\maketitleincover % pour la page de titre idem a peu pres...
+
+% Table des matieres
+\tableofcontents*
+\cleardoublepage
+\chapter{Remerciements}
+
+Merci \`a Mr. Andrei Bengus-Lasnier et \`a Mr.Yves Capdeboscq pour leur aide pr\'ecieuse.
+
+
+\backmatter
+
+
+\end{document}

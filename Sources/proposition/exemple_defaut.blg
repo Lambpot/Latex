@@ -1,0 +1,10 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: exemple_defaut.aux
+I couldn't open database file /home/guillaume/mybib.bib
+---line 90 of file exemple_defaut.aux
+ : \bibdata{/home/guillaume/mybib
+ :                               }
+I'm skipping whatever remains of this command
+The style file: alpha.bst
+I found no database files---while reading file exemple_defaut.aux
+Warning--I didn't find a database entry for "Bringshurst_1999_book"
+(There were 2 error messages)

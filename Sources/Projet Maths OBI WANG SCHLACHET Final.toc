@@ -1,0 +1,20 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {french}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Remerciements}{iii}{chapter*.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Table des mati\`eres}{iv}{section*.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Introduction}{v}{chapter*.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Qu\IeC {\textquoteright }est-ce qu\IeC {\textquoteright }une gamme musicale ?}{vii}{chapter*.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Le d\IeC {\'e}faut d\IeC {\textquoteright }une gamme musicale}{xi}{chapter*.5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Introduction aux fractions continues}{xv}{chapter*.6}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Cons\IeC {\'e}quences sur l'\IeC {\'e}tude des gammes - Gammes optimales}{xix}{chapter*.8}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Table des figures}{xxii}{section*.10}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliographie}{xxiii}{section*.12}% 

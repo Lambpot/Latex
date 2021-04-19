@@ -1,0 +1,620 @@
+\documentclass[moyen, widepage]{classeUPD}
+\graphicspath{{/home/guillaume/Logos/},
+  {/home/guillaume/recherche/figures/animaux/}}
+
+
+\OnehalfSpacing % Option pour donner l'impression que le document est
+% en double interligne
+\begin{document}
+\frontmatter
+\setboolean{these}{true} % true= these, false=hdr
+% \colorpage % [color] rouge du I de ParIs par defaut
+\background[width=\paperwidth]{Yeti_by_Philippe_Semeria.jpg}
+% exemple d'image de fond en option les options de includegraphics
+\logoUpd{Logo_P7} % le logo de la fac avec le nom du fichier
+\otherlogo[2]{LogoSmallR600}{cnrs.eps}
+% [nb de logos: 1 ou 2]{logo1}{logo2} 
+% ne fonctionne pas si nb=0
+\labo[2]{Laboratoire de Moulinsart en Sciences C\^alines}{chez Ouioui}
+% meme syntaxe
+\title{De la sociologie du Y\'eti comme paradigme de
+  protocivilisation. Comparaison avec la soci\'et\'e Inca} 
+% trois lignes maximum, bug au-dela
+\author{Tintin}
+\university % P7 par defaut, [une autre fac] en option
+\ufr[UFR de Truckologie] % par defaut : rien
+\ed[\'Ecole doctorale machin] % idem ufr
+\defense[14 juillet 1969] % par defaut le jour-dit
+\speciality{\'ethologie} % obligatoire pour la these, vide sinon
+\president{C. Haddock} % obligatoire sur la page de titre
+\direct{Tchang}
+\referees{T. Tournesol}{S. Lampion}{Rastapopoulos} 
+% obligatoire sur la page de titre 
+% 2 pour la these, 3 pour l'HDR
+\othermember[4][Examinateurs][Dupont][][Dupond][][M\up{lle}
+Castafiore][Censeur][C. Sponsz]
+% [ne sert a rien][role][Nom][role][Nom][role][Nom][role][Nom] : 4
+% maximum, tous optionnels
+
+%\makecover % pour la couverture suit la charte graphique de P7
+\maketitleincover % pour la page de titre idem a peu pres...
+%\maketitle
+
+
+% Page des r\'esum\'es francais et anglais
+\resumesummary{%
+  Ce document, intitul\'e \thetitle ~et r\'edig\'e par \theauthor, est
+  un essai pour r\'ealiser un canevas de m\'emoire de th\`ese ou
+  pour une habilitation \`a diriger des recherches avec une mise en
+  page propre \`a notre universit\'e. Cette nouvelle
+  extension a ses fondements sur la classe \texttt{memoir}, et a
+  profi\'e des commentaires de P. Wilson.}{%
+  This report is a temptative either of thesis memoir, or of memoir
+  for french silly suplementary diploma to become thesis master. This
+  new class is based on  \texttt{memoir} class and on P. Wilson's comments.
+}
+
+% Dedicace
+\begin{dedication}
+\`A Milou, mon plus agr\'eable ami depuis qu'il est muet
+\end{dedication}
+% Table des matieres
+\tableofcontents*
+\cleardoublepage
+\chapter{Remerciements}
+
+Merci \`a tous ceux qui n'ont pas particip\'e.
+\chapter{Prol\'egom\`enes}
+\chapterprecishere{Voici quelques explications de l'extension
+  classUPD}
+
+\subsubsection{Version au 13/07/2010}
+Ce document sert de \emph{tutorial} au style que j'ai cr\'e\'e, il
+faudrait en faire une documentation, ce sera plus tard; je me suis
+content\'e d'utiliser la classe {\ttfamily memoir} qui vraiment tr\`es
+compl\`ete.  Quelques commandes suppl\'ementaires servent \`a en
+simplifier l'utilisation.
+
+\subsubsection{Premi\`eres pages}
+J'ai realis\'e une page de couverture en utilisant la charte graphique
+de la fac, et deux pages de titre au standard habituel des th\`eses et
+de m\'emoire d'HDR. La charte graphique fixe la position du logo, sa
+taille, la position du titre. Mais elle laisse libre l'utilisation
+d'une image de fond \marginparnote{background}  ou d'un fond de couleur
+\marginparnote{colorpage} dont la couleur par d\'efaut est celui du i de
+ParIs. Avec un boul\'een\marginparnote{these initialis\'e \`a true ou
+  false.}, on passe d'une version \emph{th\`ese}, \`a une version \emph{HDR}.
+
+L'id\'ee est aussi d'am\'eliorer l'apparence de ces manuscript par une
+jolie couverture\marginparnote{makecover}. Cependant on peut
+utiliser une page de titre comme
+couverture\marginparnote{maketitleincover}, ce qui est l'apparence
+habituelle des th\`eses. La seconde commande de page de
+titre\marginparnote{makecover} est pr\'evue pour \^etre utilis\'ee
+apr\`es celle de couverture et sert \`a fournir les informations
+l\'egales.
+
+Ensuite viennent les r\'esum\'es\marginparnote{resumesummary} en
+fran\c{c}ais puis en anglais, une d\'edicace, la table des mati\`eres
+et les remerciements. Ce peut \^ etre aussi le lieu pour une
+pr\'eface, ou tout autre section pr\'eliminaire au manuscript
+lui-m\^eme\marginparnote{born\'ee par frontmatter et mainmatter.}
+
+\subsubsection{La mise en page}
+
+Mon parti-pris de mise en page est de suivre la logique \LaTeX~: texte
+en colonne \'etroite\marginparnote{pas ici, puisque le texte s'\'etale
+  sur 70\% de la page (note~\ref{wp}) en interligne
+  \emph{double} (note~\ref{onehalf})}. Mais j'ai allong\'e la colonne, ce qui
+interdit les notes de bas de page. Notez que c'est le format le plus
+facile pour la lecture, c'est pourquoi les journaux sont dispos\'es
+sur plusieurs colonnes. En revanche j'ai introduit de nouvelles
+commandes pour valoriser l'utilisation de la marge ext\'erieure avec
+la possibilit\'e d'y mettre des notes\marginparnote{marginparnote}
+r\'ef\'erenc\'ees (voir l'exemple de la note~\ref{note1} \`a
+la~\pref{note1}), des illustrations de
+marge\marginparnote{figinmargin} avec les utilitaires habituelles des
+figures, par exemple l'illustration~\ref{illustration1} ayant un titre
+dans la table des illustrations diff\'erents de la l\'egende dans le
+corps du texte, ou celle~\ref{ill2} sans titre mais dont le corps de
+la l\'egende est directement ins\'er\'e dans la table des
+illustrations, ou m\^eme sans l\'egende.  Il y a les figures
+flottantes habituelles, par exemple la figure~\ref{figure:fignormal},
+ou des figures\marginparnote{bigfigure} de taille plus grande mais
+fix\'ee, comme la fig.~\ref{bigfig}, qui utilise en plus la moiti\'e
+de la marge ext\'erieure.
+
+Mon choix \'etant arbitraire, c'est le meilleur. Mais comme il n'est
+pas forc\'ement partag\'e, j'ai introduit trois autres choix qui sont
+d\'efinis comme des options de cette classe. Le
+premier\marginparnote{bringshurstpage} permet d'aller
+encore plus loin dans l'utilisation des marges. Il provient d'une
+figure anglo-saxonne de la typographie
+R. Bringshurst~\cite{Bringshurst_1999_book}, qui l'a lui-m\^eme
+d\'ecouvert dans un manuscript m\'edi\'eval. 
+
+Le deuxi\`eme\marginparnote{defaultpage} est la mise en page par
+d\'efaut de la classe {\texttt memoir}. La derni\`ere
+option\marginparnote{widepage\label{wp}} permet de contenter ceux qui
+ne jurent que par les pages bien pleines.
+\subsubsection{Mais que font les polices~?}
+J'ai fix\'e la police\marginparnote{lmodern} {\sffamily sans serif}
+pour \^etre la plus proche de la police {\sffamily Gill}, qui est
+certes le choix graphique de l'universit\'e, mais n'en reste pas moins
+une police propri\'etaire. En revanche, cette police est tr\`es
+diff\'erente en fonte grasse. J'en ai donc supprim\'e l'utilisation
+dans les titres. J'ai adopt\'e une hierarchie de taille des polices en
+fonction des sous-divisions du texte~:
+\begin{itemize}
+\item {\sffamily\HUGE partie}
+\item {\sffamily\Huge chapitre}
+\item {\sffamily\huge section}
+\item {\sffamily\Large sous-section}
+\item {\sffamily\large sous-sous-section}
+\end{itemize}
+
+Gr\^ace \`a mes premiers lecteurs, le choix de la police normale s'est
+tourn\'ee vers Utopia \marginparnote{Extension fourier}. Gr\^ace \`a
+ces m\^emes commentaires, j'ai corrig\'e le style pour suivre les
+r\`egles typographiques fran\c{c}aises (en tous cas, celles que je
+connais ou celles qui m'ont \'et\'e communiqu\'ees, merci JB).
+
+Pour des raisons de facilit\'e (ou de fain\'eantise), j'ai limit\'e
+le nombre de tailles \`a deux~: 10\,pt et 11\,pt d\'efinies comme des
+options de la classe~\marginparnote{petit et moyen}.
+\subsubsection{Autre}
+J'ai aussi introduit un environnement de liste pour le curriculum
+vitae\marginparnote{cvlist}, par exemple~:
+\begin{cvlist}[\mille]
+\item[1997] d\'ecouverte de \LaTeX~;
+
+  apprentissage rapide mais superficielle pour la r\'edaction d'un rapport
+  sans pr\'etention au sujet d'un stage int\'eressant effectu\'e dans une
+  ambiance sympathique~;
+\item[2010] r\'ealisation d'une extension pour un document
+  universitaire qui res\-pectent certaines contraintes, mais j'en connais qui
+  voudraient en rajouter~;
+
+  r\'edaction d'un document avec cette extension~;
+\item[2020] soutenance d'HDR~;
+\end{cvlist}
+fin de l'exemple.
+
+P. Wilson fournit une commande\marginparnote{OnehalfSpacing\label{onehalf}}
+permettant de feindre le doublement de l'interligne, ce qui peut aider
+\`a r\'ediger les documents \`a destination de la biblioth\`eque.
+
+La suite\marginparnote{d\'ebutant par backmatter.} du document comprend
+les annexes, les tables des figures et des
+illustrations\marginparnote{C'est ainsi que je nomme les figures dans
+  les marges.}, liste des tableaux et bibliographie. Il faudrait
+ajouter un index et un glossaire.
+
+\subsubsection{Les chantiers}
+
+Bien s\^ur, il y a des restrictions et des probl\`emes~:
+\begin{itemize}\tightlist
+\item le titre est fix\'e \`a trois lignes maximum~;
+\item il y a au plus trois tutelles, l'universit\'e ayant un place
+  privil\'egi\'ee puis deux autres en pieds de page de titre, et
+  seulement deux~;
+\item pour le jury, j'ai fix\'e la position du pr\'esident, du
+  directeur (si besoin est), des rapporteurs (deux ou trois
+  selon\verb+these+)~;
+\item les autres membres du jury ont une d\'esignation libre, mais
+  leur nombre est limit\'e \`a quatre~;
+\item il manque une quatri\`eme page de couverture~;
+\item et un index~;
+\item et un glossaire~;
+\item et toutes les erreurs que je n'ai pas vues\dots
+\end{itemize}
+
+Ce canevas est probablement imparfait. Le code pourrait notamment
+\^etre rationnalis\'e. J'esp\`ere seulement qu'il pourra servir de
+base \`a un format, \`a la fois alternatif de ce qui existe
+mais qui porte aussi une certaine identit\'e. Enfin et surtout, il
+doit simplifier la mise en page de nos documents.
+\mainmatter
+\part{Intime}
+\chapter[Introduction][Intro]{Chapitre Introductif}
+\chapterprecishere{une vraie introduction \`a suivre}
+Des tableaux
+\begin{table}[h!]
+\centering
+\begin{tabular}{|>{\bfseries}p{1cm}|>{\large}p{1cm}|>{\Large\itshape}p{1cm}|}
+\toprule
+a aa aaa&a aa aaa&a aa aaa\\ \hline
+b bb bbb&b bb bbb&b bb bbb\\ \hline
+m mm mmm&m mm mmm&m mm mmm\\ \bottomrule
+\end{tabular}
+\caption[Exemple de table]{Voici un exemple de tableau, pour plus
+  d'informations voir le manuel de la classe \ttfamily{memoir}.}
+\end{table}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l@{$\wr$}c@{$\natural$}r|}
+\hline
+a aa aaa&a aa aaa&a aa aaa\\ \hline
+b bb bbb&b bb bbb&b bb bbb\\ \hline
+m mm mm&m mm mm&m mm mm\\ \hline
+\end{tabular}
+\caption[Un autre exemple de table]{Voici un autre exemple de tableau,
+  pour plus d'informations voir le manuel de la classe
+  {\ttfamily memoir}, m\^eme si celui-ci est particuli\`erement laid.}
+\end{table}
+\section{Introduction}
+\subsection{Paragraphes introductifs}
+Des listes~:
+\begin{enumerate}\tightlist
+\item voici le premier point,
+\item voici le deuxi\`eme point,
+\item voici le troisi\`eme point,
+\end{enumerate}
+pour une liste ramass\'ee, ou
+\begin{enumerate}
+\item voici le premier point,
+\item voici le deuxi\`eme point,
+\item voici le troisi\`eme point,
+\end{enumerate}
+pour une liste a\'er\'ee.
+
+\chapter[Ce qui suit][\`A suivre]{La suite} 
+% dans la table des matieres - en entete - en titre
+\chapterprecishere{Ceci n'est que du copier-coller de pages de Wikipedia
+  pour tester la mise en page}
+Maurice Couette\marginparnote{Ceci est une note, mais il y en aura
+  d'autres.\label{note1}}, n\'e \`a Tours\marginparnote{Tr\`es
+  belle ville de province, le long de la Loire avec beaucoup de
+  chateaux.} le 9 janvier 1858 et d\'ec\'ed\'e le 18 août 1943, est un
+physicien~\cite{Albano_1996_PRL} fran\c{c}ais dont les travaux
+port\`erent principalement sur la m\'ecanique des fluides et
+particuli\`erement sur la rh\'eologie. Son nom est principalement
+associ\'e \`a l'\'ecoulement de Couette. On lui doit \'egalement un
+viscosim\`etre \`a cylindres concentriques qui porte son
+nom~\cite{Aldana_2007_PRL}.
+Et maintenant un autre paragraphe
+\section{Et apr\`es~?}
+
+Une autre section.
+\begin{equation}
+E = \frac{1}{2}kx^2
+\end{equation}
+\subsection{Tout autre chose}
+\subsubsection{Qu'y aurait-il apr\`es~?}
+\begin{verse}
+Demain, d\`es l'aube, \`a l'heure o\`u blanchit la campagne,\\
+Je partirai. Vois-tu, je sais que tu m'attends.\\
+J'irai par la for\^et, j'irai par la montagne.\\
+Je ne puis demeurer loin de toi plus longtemps.\marginparnote{Notez
+  l'illustration dans la marge, tr\`es bien choisie. Ce n'est un
+  \emph{flottant} au sens de \LaTeX, mais sa position n'est pas
+  absol\^ument fix\'ee non plus. Ici sans
+  l\'egende, voir plus loin avec une l\'egende.}\\[\baselineskip]
+
+\figinmargin{sketch.eps}
+
+Je marcherai les yeux fix\'es sur mes pens\'ees,\\
+Sans rien voir au dehors, sans entendre aucun bruit,\\
+Seul, inconnu, le dos courb\'e, les mains crois\'ees,\\
+Triste, et le jour pour moi sera comme la nuit.\\[\baselineskip]
+
+Je ne regarderai ni l'or du soir qui tombe,\\
+Ni les voiles au loin descendant vers Harfleur,\\
+Et quand j'arriverai, je mettrai sur ta tombe\\
+Un bouquet de houx vert et de bruy\`ere en fleur.\\
+\end{verse}
+
+Victor-Marie Hugo, n\'e le 26 f\'evrier 1802 \`a Besan\c{c}on et mort
+le 22 mai 1885 \`a Paris, est un \'ecrivain, dramaturge, po\`ete,
+homme politique, acad\'emicien et intellectuel engag\'e fran\c{c}ais,
+consid\'er\'e comme le plus important des \'ecrivains romantiques de
+langue fran\c{c}aise et un des plus importants \'ecrivains de la
+litt\'erature fran\c{c}aise.
+
+Victor Hugo occupe une place exceptionnelle dans l'histoire des
+lettres fran\c{c}aises et domine le dix-neuvi\`eme si\`ecle par la
+diversit\'e, l'ampleur et la dur\'ee de ses cr\'eations
+litt\'eraires. Il est en effet po\`ete lyrique avec des recueils comme
+Odes et Ballades (1826), les Feuilles d'automne (1832) ou les
+Contemplations (1856), c\'el\`ebres pour l'\'evocation de sa fille
+L\'eopoldine morte, mais il est aussi po\`ete engag\'e contre
+Napol\'eon III dans Les Ch\^atiments (1853) ou encore po\`ete \'epique
+avec La L\'egende des si\`ecles (1859 et 1877). Il est en m\^eme temps
+un formidable romancier du peuple, avec par exemple Notre-Dame de
+Paris (1831) ou les Mis\'erables (1862), et un th\'eoricien du drame
+romantique qu'il illustre pendant une d\'ecennie avec principalement
+Hernani en 1830 et Ruy Blas en 1838. 
+
+Son \oe{}uvre monumentale comporte \'egalement des discours politiques \`a
+la Chambre des pairs, par exemple sur la peine de mort, sur l'\'ecole
+ou sur l'Europe, des r\'ecits de voyages (Le Rhin, 1842 ou Choses vues
+, posthumes, 1887 et 1890), et une correspondance abondante. 
+
+Victor Hugo a fortement contribu\'e au renouvellement de la po\'esie
+et du th\'e\^atre en tant que chef de file du mouvement romantique ; il
+a \'et\'e admir\'e par ses contemporains et l'est encore m\^eme si il
+a \'et\'e aussi contest\'e par certains auteurs modernes pour les
+surabondances pr\'esentes dans ses textes. Il a aussi permis \`a de
+nombreuses g\'en\'erations de d\'evelopper une r\'eflexion sur
+l'engagement de l'\'ecrivain dans la vie politique et sociale gr\^ace
+\`a ses multiples prises de position qui le condamneront \`a l'exil
+pendant les vingt ans du Second Empire. 
+
+\figinmargin[\smallcaption{Premi\`ere illustration}{Illustration de
+  marge avec l\'egende et titre\label{illustration1}}]{sketch.eps}
+
+Ses choix, \`a la fois moraux et politiques, de la deuxi\`eme partie
+de sa vie et son \oe{}uvre hors du commun ont fait de lui un personnage
+embl\'ematique que la Troisi\`eme R\'epublique a honor\'e \`a sa mort
+le 22 mai 1885 par des fun\'erailles nationales grandioses qui ont
+accompagn\'e le transfert de sa d\'epouille au Panth\'eon, le 31 mai
+1885. 
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{sketch}
+  \caption[Figure simple]{Figure de taille normale dans le texte, et
+    pleins d'explications pour comprendre les arcanes d'un sch\'ema
+    de bifurcation%
+\label{figure:fignormal}}
+\end{figure}
+
+Victor-Marie Hugo\marginparnote{J'ai eu une baisse d'inventivit\'e,
+  \emph{bis repetita...}}, n\'e le 26 f\'evrier 1802 \`a Besan\c{c}on et mort le 22 mai
+1885 \`a Paris, est un \'ecrivain, dramaturge, po\`ete, homme politique,
+acad\'emicien et intellectuel engag\'e fran\c{c}ais, consid\'er\'e comme le plus
+important des \'ecrivains romantiques de langue fran\c{c}aise et un des plus
+importants \'ecrivains de la litt\'erature fran\c{c}aise. 
+
+\figinmargin[\smallcaption{}{Illustration sans titre\label{ill2}}]{sketch.eps}
+
+Victor Hugo occupe une place exceptionnelle dans l'histoire des
+lettres fran\c{c}aises et domine le dix-neuvi\`eme si\`ecle par la
+diversit\'e, l'ampleur et la dur\'ee de ses cr\'eations
+litt\'eraires. Il est en effet po\`ete lyrique avec des recueils comme
+Odes et Ballades (1826), les Feuilles d'automne (1832) ou les
+Contemplations (1856), c\'el\`ebres pour l'\'evocation de sa fille
+L\'eopoldine morte, mais il est aussi po\`ete engag\'e contre
+Napol\'eon III dans Les Ch\^atiments (1853) ou encore po\`ete \'epique
+avec La L\'egende des si\`ecles (1859 et 1877). Il est en m\^eme temps
+un formidable romancier du peuple, avec par exemple Notre-Dame de
+Paris (1831) ou les Mis\'erables (1862), et un th\'eoricien du drame
+romantique qu'il illustre pendant une d\'ecennie avec principalement
+Hernani en 1830 et Ruy Blas en 1838. 
+
+Son \oe{}uvre monumentale comporte \'egalement des discours politiques \`a
+la Chambre des pairs, par exemple sur la peine de mort, sur l'\'ecole
+ou sur l'Europe, des r\'ecits de voyages (Le Rhin, 1842 ou Choses vues
+, posthumes, 1887 et 1890), et une correspondance abondante. 
+
+Victor Hugo a fortement contribu\'e au renouvellement de la po\'esie
+et du th\'e\^atre en tant que chef de file du mouvement romantique ; il
+a \'et\'e admir\'e par ses contemporains et l'est encore m\^eme si il
+a \'et\'e aussi contest\'e par certains auteurs modernes pour les
+surabondances pr\'esentes dans ses textes. Il a aussi permis \`a de
+nombreuses g\'en\'erations de d\'evelopper une r\'eflexion sur
+l'engagement de l'\'ecrivain dans la vie politique et sociale gr\^ace
+\`a ses multiples prises de position qui le condamneront \`a l'exil
+pendant les vingt ans du Second Empire. 
+
+Ses choix, \`a la fois moraux et politiques, de la deuxi\`eme partie
+de sa vie et son \oe{}uvre hors du commun ont fait de lui un personnage
+embl\'ematique que la Troisi\`eme R\'epublique a honor\'e \`a sa mort
+le 22 mai 1885 par des fun\'erailles nationales grandioses qui ont
+accompagn\'e le transfert de sa d\'epouille au
+Panth\'eon, le 31 mai 1885.
+
+
+Victor-Marie Hugo, n\'e le 26 f\'evrier 1802 \`a Besan\c{c}on et mort
+le 22 mai 1885 \`a Paris, est un \'ecrivain, dramaturge, po\`ete,
+homme politique, acad\'emicien et intellectuel engag\'e fran\c{c}ais,
+consid\'er\'e comme le plus important des \'ecrivains romantiques de
+langue fran\c{c}aise et un des plus importants \'ecrivains de la
+litt\'erature fran\c{c}aise.
+
+Victor Hugo occupe une place exceptionnelle dans l'histoire des
+lettres fran\c{c}aises et domine le dix-neuvi\`eme si\`ecle par la
+diversit\'e, l'ampleur et la dur\'ee de ses cr\'eations
+litt\'eraires. Il est en effet po\`ete lyrique avec des recueils comme
+Odes et Ballades (1826), les Feuilles d'automne (1832) ou les
+Contemplations (1856), c\'el\`ebres pour l'\'evocation de sa fille
+L\'eopoldine morte, mais il est aussi po\`ete engag\'e contre
+Napol\'eon III dans Les Ch\^atiments (1853) ou encore po\`ete \'epique
+avec La L\'egende des si\`ecles (1859 et 1877). Il est en m\^eme temps
+un formidable romancier du peuple, avec par exemple Notre-Dame de
+Paris (1831) ou les Mis\'erables (1862), et un th\'eoricien du drame
+romantique qu'il illustre pendant une d\'ecennie avec principalement
+Hernani en 1830 et Ruy Blas en 1838. 
+
+Son oeuvre monumentale comporte \'egalement des discours politiques \`a
+la Chambre des pairs, par exemple sur la peine de mort, sur l'\'ecole
+ou sur l'Europe, des r\'ecits de voyages (Le Rhin, 1842 ou Choses vues
+, posthumes, 1887 et 1890), et une correspondance abondante. 
+
+Victor Hugo a fortement contribu\'e au renouvellement de la po\'esie
+et du th\'e\^atre en tant que chef de file du mouvement romantique ; il
+a \'et\'e admir\'e par ses contemporains et l'est encore m\^eme si il
+a \'et\'e aussi contest\'e par certains auteurs modernes pour les
+surabondances pr\'esentes dans ses textes. Il a aussi permis \`a de
+nombreuses g\'en\'erations de d\'evelopper une r\'eflexion sur
+l'engagement de l'\'ecrivain dans la vie politique et sociale gr\^ace
+\`a ses multiples prises de position qui le condamneront \`a l'exil
+pendant les vingt ans du Second Empire. 
+\figinmargin[\smallcaption{Encore une ?}{juste pour le
+  plaisir}]{sketch.eps}
+
+Ses choix, \`a la fois moraux et politiques, de la deuxi\`eme partie
+de sa vie et son oeuvre hors du commun ont fait de lui un personnage
+embl\'ematique que la Troisi\`eme R\'epublique a honor\'e \`a sa mort
+le 22 mai 1885 par des fun\'erailles nationales grandioses qui ont
+accompagn\'e le transfert de sa d\'epouille au Panth\'eon, le 31 mai
+1885. 
+
+\begin{bigfigure}
+  \largegraphic[\bigfigwidth]{sketch}
+  \caption[Une grande figure]{Une figure de taille maximale, et
+    pleins d'explications pour comprendre les arcanes d'un sch\'ema
+    de bifurcation \label{bigfig}}
+\end{bigfigure}
+
+\begin{verse}
+Demain, d\`es l'aube, \`a l'heure o\`u blanchit la campagne,\\
+Je partirai. Vois-tu, je sais que tu m'attends.\\
+J'irai par la for\^et, j'irai par la montagne.\\
+Je ne puis demeurer loin de toi plus longtemps.\\[\baselineskip]
+
+Je marcherai les yeux fix\'es sur mes pens\'ees,\\
+Sans rien voir au dehors, sans entendre aucun bruit,\\
+Seul, inconnu, le dos courb\'e, les mains crois\'ees,\\
+Triste, et le jour pour moi sera comme la nuit.\\[\baselineskip]
+
+Je ne regarderai ni l'or du soir qui tombe,\\
+Ni les voiles au loin descendant vers Harfleur,\\
+Et quand j'arriverai, je mettrai sur ta tombe\\
+Un bouquet de houx vert et de bruy\`ere en fleur.\\
+\end{verse}
+
+Victor-Marie Hugo, n\'e le 26 f\'evrier 1802 \`a Besan\c{c}on et mort
+le 22 mai 1885 \`a Paris, est un \'ecrivain, dramaturge, po\`ete,
+homme politique, acad\'emicien et intellectuel engag\'e fran\c{c}ais,
+consid\'er\'e comme le plus important des \'ecrivains romantiques de
+langue fran\c{c}aise et un des plus importants \'ecrivains de la
+litt\'erature fran\c{c}aise.
+
+Victor Hugo occupe une place exceptionnelle dans l'histoire des
+lettres fran\c{c}aises et domine le dix-neuvi\`eme si\`ecle par la
+diversit\'e, l'ampleur et la dur\'ee de ses cr\'eations
+litt\'eraires. Il est en effet po\`ete lyrique avec des recueils comme
+Odes et Ballades (1826), les Feuilles d'automne (1832) ou les
+Contemplations (1856), c\'el\`ebres pour l'\'evocation de sa fille
+L\'eopoldine morte, mais il est aussi po\`ete engag\'e contre
+Napol\'eon III dans Les Ch\^atiments (1853) ou encore po\`ete \'epique
+avec La L\'egende des si\`ecles (1859 et 1877). Il est en m\^eme temps
+un formidable romancier du peuple, avec par exemple Notre-Dame de
+Paris (1831) ou les Mis\'erables (1862), et un th\'eoricien du drame
+romantique qu'il illustre pendant une d\'ecennie avec principalement
+Hernani en 1830 et Ruy Blas en 1838. 
+
+Son \oe{}uvre monumentale comporte \'egalement des discours politiques \`a
+la Chambre des pairs, par exemple sur la peine de mort, sur l'\'ecole
+ou sur l'Europe, des r\'ecits de voyages (Le Rhin, 1842 ou Choses vues
+, posthumes, 1887 et 1890), et une correspondance abondante. 
+
+Victor Hugo a fortement contribu\'e au renouvellement de la po\'esie
+et du th\'e\^atre en tant que chef de file du mouvement romantique ; il
+a \'et\'e admir\'e par ses contemporains et l'est encore m\^eme si il
+a \'et\'e aussi contest\'e par certains auteurs modernes pour les
+surabondances pr\'esentes dans ses textes. Il a aussi permis \`a de
+nombreuses g\'en\'erations de d\'evelopper une r\'eflexion sur
+l'engagement de l'\'ecrivain dans la vie politique et sociale gr\^ace
+\`a ses multiples prises de position qui le condamneront \`a l'exil
+pendant les vingt ans du Second Empire. 
+
+Ses choix, \`a la fois moraux et politiques, de la deuxi\`eme partie
+de sa vie et son \oe{}uvre hors du commun ont fait de lui un personnage
+embl\'ematique que la Troisi\`eme R\'epublique a honor\'e \`a sa mort
+le 22 mai 1885 par des fun\'erailles nationales grandioses qui ont
+accompagn\'e le transfert de sa d\'epouille au Panth\'eon, le 31 mai
+1885. 
+
+Victor-Marie Hugo, n\'e le 26 f\'evrier 1802 \`a Besan\c{c}on et mort
+le 22 mai 1885 \`a Paris, est un \'ecrivain, dramaturge, po\`ete,
+homme politique, acad\'emicien et intellectuel engag\'e fran\c{c}ais,
+consid\'er\'e comme le plus important des \'ecrivains romantiques de
+langue fran\c{c}aise et un des plus importants \'ecrivains de la
+litt\'erature fran\c{c}aise.
+
+Victor Hugo occupe une place exceptionnelle dans l'histoire des
+lettres fran\c{c}aises et domine le dix-neuvi\`eme si\`ecle par la
+diversit\'e, l'ampleur et la dur\'ee de ses cr\'eations
+litt\'eraires. Il est en effet po\`ete lyrique avec des recueils comme
+Odes et Ballades (1826), les Feuilles d'automne (1832) ou les
+Contemplations (1856), c\'el\`ebres pour l'\'evocation de sa fille
+L\'eopoldine morte, mais il est aussi po\`ete engag\'e contre
+Napol\'eon III dans Les Ch\^atiments (1853) ou encore po\`ete \'epique
+avec La L\'egende des si\`ecles (1859 et 1877). Il est en m\^eme temps
+un formidable romancier du peuple, avec par exemple Notre-Dame de
+Paris (1831) ou les Mis\'erables (1862), et un th\'eoricien du drame
+romantique qu'il illustre pendant une d\'ecennie avec principalement
+Hernani en 1830 et Ruy Blas en 1838. 
+
+Son \oe{}uvre monumentale comporte \'egalement des discours politiques \`a
+la Chambre des pairs, par exemple sur la peine de mort, sur l'\'ecole
+ou sur l'Europe, des r\'ecits de voyages (Le Rhin, 1842 ou Choses vues
+, posthumes, 1887 et 1890), et une correspondance abondante. 
+
+Victor Hugo a fortement contribu\'e au renouvellement de la po\'esie
+et du th\'e\^atre en tant que chef de file du mouvement romantique ; il
+a \'et\'e admir\'e par ses contemporains et l'est encore m\^eme si il
+a \'et\'e aussi contest\'e par certains auteurs modernes pour les
+surabondances pr\'esentes dans ses textes. Il a aussi permis \`a de
+nombreuses g\'en\'erations de d\'evelopper une r\'eflexion sur
+l'engagement de l'\'ecrivain dans la vie politique et sociale gr\^ace
+\`a ses multiples prises de position qui le condamneront \`a l'exil
+pendant les vingt ans du Second Empire. 
+
+Ses choix, \`a la fois moraux et politiques, de la deuxi\`eme partie
+de sa vie et son \oe{}uvre hors du commun ont fait de lui un personnage
+embl\'ematique que la Troisi\`eme R\'epublique a honor\'e \`a sa mort
+le 22 mai 1885 par des fun\'erailles nationales grandioses qui ont
+accompagn\'e le transfert de sa d\'epouille au Panth\'eon, le 31 mai
+1885. 
+Victor-Marie Hugo, n\'e le 26 f\'evrier 1802 \`a Besan\c{c}on et mort
+le 22 mai 1885 \`a Paris, est un \'ecrivain, dramaturge, po\`ete,
+homme politique, acad\'emicien et intellectuel engag\'e fran\c{c}ais,
+consid\'er\'e comme le plus important des \'ecrivains romantiques de
+langue fran\c{c}aise et un des plus importants \'ecrivains de la
+litt\'erature fran\c{c}aise.
+
+Victor Hugo occupe une place exceptionnelle dans l'histoire des
+lettres fran\c{c}aises et domine le dix-neuvi\`eme si\`ecle par la
+diversit\'e, l'ampleur et la dur\'ee de ses cr\'eations
+litt\'eraires. Il est en effet po\`ete lyrique avec des recueils comme
+Odes et Ballades (1826), les Feuilles d'automne (1832) ou les
+Contemplations (1856), c\'el\`ebres pour l'\'evocation de sa fille
+L\'eopoldine morte, mais il est aussi po\`ete engag\'e contre
+Napol\'eon III dans Les Ch\^atiments (1853) ou encore po\`ete \'epique
+avec La L\'egende des si\`ecles (1859 et 1877). Il est en m\^eme temps
+un formidable romancier du peuple, avec par exemple Notre-Dame de
+Paris (1831) ou les Mis\'erables (1862), et un th\'eoricien du drame
+romantique qu'il illustre pendant une d\'ecennie avec principalement
+Hernani en 1830 et Ruy Blas en 1838. 
+
+Son \oe{}uvre monumentale comporte \'egalement des discours politiques \`a
+la Chambre des pairs, par exemple sur la peine de mort, sur l'\'ecole
+ou sur l'Europe, des r\'ecits de voyages (Le Rhin, 1842 ou Choses vues
+, posthumes, 1887 et 1890), et une correspondance abondante. 
+
+Victor Hugo a fortement contribu\'e au renouvellement de la po\'esie
+et du th\'e\^atre en tant que chef de file du mouvement romantique ; il
+a \'et\'e admir\'e par ses contemporains et l'est encore m\^eme si il
+a \'et\'e aussi contest\'e par certains auteurs modernes pour les
+surabondances pr\'esentes dans ses textes. Il a aussi permis \`a de
+nombreuses g\'en\'erations de d\'evelopper une r\'eflexion sur
+l'engagement de l'\'ecrivain dans la vie politique et sociale gr\^ace
+\`a ses multiples prises de position qui le condamneront \`a l'exil
+pendant les vingt ans du Second Empire. 
+
+Ses choix, \`a la fois moraux et politiques, de la deuxi\`eme partie
+de sa vie et son \oe{}uvre hors du commun ont fait de lui un personnage
+embl\'ematique que la Troisi\`eme R\'epublique a honor\'e \`a sa mort
+le 22 mai 1885 par des fun\'erailles nationales grandioses qui ont
+accompagn\'e le transfert de sa d\'epouille au Panth\'eon, le 31 mai
+1885. 
+\part{Une autre pour tester la num\'erotation}
+\appendix
+\appendixpage
+\chapter{La distribution de Weibull}
+\section{Math\'ematique}
+\section{Physique}
+\subsection{Physique statistique}
+\backmatter
+% Tables de figures
+\listoffigures
+\listofillustrations
+\cleardoublepage
+% Liste des tableaux
+\listoftables
+
+\bibliography{/home/guillaume/mybib}
+\bibliographystyle{alpha}
+\end{document}
